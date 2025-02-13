@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Dresses</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #966c6c;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 90%;
+        }
+        .card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px;
+            background: #bd899b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #7a5b5b;
+        }
+        select {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    
+    <div class="container">
+        <div class="card">
+            <img src="men-dress1.jpg" alt="Men's Dress 1">
+            <h3>Casual Shirt</h3>
+            <p>Price: $40</p>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <br>
+            <button class="btn">Watch List</button>
+            <button class="btn">Buy Now</button>
+        </div>
+        
+        <div class="card">
+            <img src="men-dress2.jpg" alt="Men's Dress 2">
+            <h3>Formal Suit</h3>
+            <p>Price: $120</p>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <br>
+            <button class="btn">Watch List</button>
+            <button class="btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
